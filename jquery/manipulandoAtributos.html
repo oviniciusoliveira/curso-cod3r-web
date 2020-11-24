@@ -22,7 +22,50 @@
 <body class='conteudo exercicio'>
     <h1>Manipulando Atributos</h1>
     <div wm-relogio='1000'></div>
+    <div wm-relogio='3000'></div>
     <script>
-        // ...
+        function Relogio(elemento) {
+            const horaCerta = $('<p>').html('0')
+            const botaoMenos = $('<button>').html('-')
+            const botaoMais = $('<button>').html('+')
+
+            const elementojQuery = $(elemento)
+            elementojQuery.append(horaCerta, botaoMenos, botaoMais)
+
+            const getIntervaloAtual = 
+                () => parseInt(elementojQuery.attr('wm-relogio'))
+
+            let temporizador = null
+
+            const iniciar = () => {
+                if (temporizador) clearInterval(temporizador)
+                temporizador = setInterval(() => {
+                    horaCerta.html(new Date().toLocaleString('pt-BR'))
+                }, getIntervaloAtual())
+            }
+
+            const alterarIntervalo = delta => {
+                const novoIntervalo = Math.max(getIntervaloAtual() + delta, 
+                1000)
+                //mesma coisa de: 
+                // getIntervaloAtual() + delta >= 1000 ? getIntervaloAtual + delta : 1000
+                elementojQuery.attr('wm-relogio', novoIntervalo)
+                iniciar()
+            }
+            botaoMenos.click(e => alterarIntervalo(1000))
+            botaoMais.click(e => alterarIntervalo(-1000))
+            iniciar()
+        }
+
+        $('[wm-relogio]').each((index, element) => new Relogio(element))
+
+        // ler atributo
+        // $('[wm-relogio]').attr('opa') 
+
+        // adicionar ou alterar atributos
+        $('[wm-relogio]').attr({ opa: 1, novo: true})
+        
+        // remover atributo
+        $('[wm-relogio]').removeAttr('opa').removeAttr('novo')
     </script>
 </body>
