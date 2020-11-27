@@ -36,6 +36,8 @@
                   )
               }
               $(this).html(conteudoFinal)
+              // importante retornar this para poder encadear o plugin com outras chamadas
+              return this
           }
       })(jQuery);
       $('div').interpretar()
