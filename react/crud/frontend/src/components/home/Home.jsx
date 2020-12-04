@@ -1,7 +1,7 @@
 import React from "react";
 import Main from "../template/Main";
 
-export default (props) => (
+const home = (props) => (
   <Main
     icon="home"
     title="Início"
@@ -15,3 +15,5 @@ export default (props) => (
     </div>
   </Main>
 );
+
+export default home;

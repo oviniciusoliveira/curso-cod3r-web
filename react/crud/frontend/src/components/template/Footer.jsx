@@ -1,8 +1,10 @@
-import './Footer.css'
-import React from 'react'
-
-export default props => <footer className="footer">
+import "./Footer.css";
+import React from "react";
+const footer = (props) => (
+  <footer className="footer">
     <span>
-        Desenvolvido por <strong> Vinícius Oliveira</strong>
+      Desenvolvido por <strong> Vinícius Oliveira</strong>
     </span>
-</footer>
+  </footer>
+);
+export default footer;
