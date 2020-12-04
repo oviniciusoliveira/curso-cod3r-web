@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Componente Desafio</title>
+    <link rel="stylesheet" href="/css/estilo.css" />
+    <script src="/js/vue.min.js"></script>
+  </head>
+  <body class="exercicio">
+    <div id="app">
+      <contador :funcao=2></contador>
+      <contador :funcao=3></contador>
+      <contador :funcao=5></contador>
+    </div>
+    <script>
+
+      Vue.component("contador", {
+
+        props: ["funcao"],
+
+        data: function () {
+          return {contador: 0}
+        },
+        methods: {
+          somar() {
+            this.contador += this.funcao
+          }
+        },
+        template: `
+          <div> 
+            <span>{{ contador }}</span>
+            <button @click="somar">Adicionar {{ funcao }}</button> 
+            <button @click="contador--">Remover</button> 
+          </div>
+        `,
+      });
+      new Vue({
+        el: "#app",
+      });
+    </script>
+  </body>
+</html>
