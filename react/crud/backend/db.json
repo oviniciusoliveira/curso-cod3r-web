@@ -1,19 +1,14 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Arthur Oliveira",
-      "email": "aoliveira@gmail.com.br"
-    },
-    {
-      "id": 2,
-      "name": "Andreia Julia da Silva",
-      "email": "ajds@empresa.com"
-    },
-    {
       "name": "Antonio Belchior",
-      "email": "abelchior@gmail.com",
-      "id": 3
+      "email": "antoniobelchior@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "Carlos Belchior",
+      "email": "carlosbelchior@gmail.com",
+      "id": 2
     }
   ]
 }

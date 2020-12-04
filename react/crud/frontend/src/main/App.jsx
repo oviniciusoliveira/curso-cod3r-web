@@ -6,17 +6,19 @@ import { BrowserRouter } from "react-router-dom";
 
 import Logo from "../components/template/Logo";
 import Nav from "../components/template/Nav";
-import Routes from './Routes'
+import Routes from "./Routes";
 import Footer from "../components/template/Footer";
 
-export default (props) => (
+const appExport = (props) => (
   // HashRouter é uma alternativa à BrowserRouter
   <BrowserRouter>
-  <div className="app">
-    <Logo />
-    <Nav />
-    <Routes />
-    <Footer />
-  </div>
+    <div className="app">
+      <Logo />
+      <Nav />
+      <Routes />
+      <Footer />
+    </div>
   </BrowserRouter>
 );
+
+export default appExport;
