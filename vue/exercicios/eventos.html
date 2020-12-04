@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Eventos</title>
-    <link rel="stylesheet" href="/css/estilo.css">
+    <link rel="stylesheet" href="/css/estilo.css" />
     <script src="/js/vue.min.js"></script>
-</head>
-<body class="exercicio">
-
+  </head>
+  <body class="exercicio">
+    <div id="app">
+      <p>{{ contador }}</p>
+      <p>
+        <button v-on:click="add">Adicionar 1</button>
+        <!-- versao reduzida do v-on: -->
+        <!-- @click -->
+        <button @click="contador -= 2">Remover 2</button>
+      </p>
+      <p @mousemove="atualizarPosicao" style="background-color: #555">
+        Coordenadas: {{x}} e {{y}}
+        <span @mousemove.stop>Aqui Não</span>
+      </p>
+      <!-- keyup.(key) -->
+      <input type="text" @keyup.enter="alerta" />
+    </div>
     <script>
-        // ...
+      new Vue({
+        el: "#app",
+        data: {
+          x: 0,
+          y: 0,
+          contador: 0,
+        },
+        methods: {
+          add() {
+            this.contador++;
+          },
+          atualizarPosicao(e) {
+            this.x = e.clientX;
+            this.y = e.clientY;
+          },
+          // Alternativa mais trabalhosa do @mousemove.stop
+          //   stop(e) {
+          //       e.stopPropagation()
+          //   }
+          alerta() {
+            alert("Enter!");
+          },
+        },
+      });
     </script>
-</body>
+  </body>
 </html>
