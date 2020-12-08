@@ -1,23 +1,23 @@
 <template>
     <div class="calculator">
         <Display value="1000" />
-        <Button label="AC" triple />
-        <Button label="/" operation />
-        <Button label="7" />
-        <Button label="8" />
-        <Button label="9" />
-        <Button label="*" operation />
-        <Button label="4" />
-        <Button label="5" />
-        <Button label="6" />
-        <Button label="-" operation />
-        <Button label="1" />
-        <Button label="2" />
-        <Button label="3" />
-        <Button label="+" operation />
-        <Button label="0" double />
-        <Button label="." />
-        <Button label="=" operation />
+        <Button label="AC" @on-calc-button-click="clearMemory" triple  />
+        <Button label="/" @on-calc-button-click="setOperation" operation  />
+        <Button label="7" @on-calc-button-click="addDigit" />
+        <Button label="8" @on-calc-button-click="addDigit" />
+        <Button label="9" @on-calc-button-click="addDigit" />
+        <Button label="*" @on-calc-button-click="setOperation" operation />
+        <Button label="4" @on-calc-button-click="addDigit" />
+        <Button label="5" @on-calc-button-click="addDigit" />
+        <Button label="6" @on-calc-button-click="addDigit" />
+        <Button label="-" @on-calc-button-click="setOperation" operation />
+        <Button label="1" @on-calc-button-click="addDigit" />
+        <Button label="2" @on-calc-button-click="addDigit" />
+        <Button label="3" @on-calc-button-click="addDigit" />
+        <Button label="+" @on-calc-button-click="setOperation" operation />
+        <Button label="0" @on-calc-button-click="addDigit" double />
+        <Button label="." @on-calc-button-click="addDigit" />
+        <Button label="=" @on-calc-button-click="setOperation" operation />
     </div>
 </template>
 
@@ -25,7 +25,15 @@
 import Display from "../components/Display";
 import Button from "../components/Button";
 export default {
-    components: { Button, Display }
+    components: { Button, Display },
+    methods: {
+        clearMemory() {
+        },
+        setOperation(operation) {
+        },
+        addDigit(n) {
+        }
+    }
 };
 </script>
 
