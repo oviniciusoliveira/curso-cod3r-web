@@ -1,6 +1,6 @@
 <template>
     <div class="calculator">
-        <Display />
+        <Display value="1000" />
         <Button label="AC" triple />
         <Button label="/" operation />
         <Button label="7" />
@@ -37,7 +37,7 @@ export default {
         overflow: hidden;
 
         display: grid;
-        grid-template-columns: repeat(4, 25px);
+        grid-template-columns: repeat(4, 25%);
         grid-template-rows: 1fr repeat(5, 48px);
     }
 </style>
