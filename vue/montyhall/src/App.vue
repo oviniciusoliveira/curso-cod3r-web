@@ -1,11 +1,17 @@
 <template>
   <div id="app">
     <h1>Problema de Monty Hall</h1>
+    <Gift />
   </div>
 </template>
 
 <script>
-export default {};
+import Gift from "./components/Gift";
+
+export default {
+  name: "App",
+  components: { Gift }
+};
 </script>
 
 <style>
@@ -20,15 +26,15 @@ body {
 }
 
 #app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #app h1 {
-    border: 1px solid #222222;
-    background-color: #22222277;
-    padding: 20px;
-    margin-bottom: 60px;
+  border: 1px solid #222222;
+  background-color: #22222277;
+  padding: 20px;
+  margin-bottom: 60px;
 }
 </style>
