@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Caneta BIC Preta",
+      "price": 5.89
+    },
+    {
+      "id": 2,
+      "name": "Caneta BIC Azul",
+      "price": 5.89
+    },
+    {
+      "id": 3,
+      "name": "Notebook Asus",
+      "price": 5000
+    },
+    {
+      "id": 4,
+      "name": "Notebook MAC Pro",
+      "price": 11999.99
+    },
+    {
+      "id": 5,
+      "name": "Celular Samsung S8",
+      "price": 6499.9
+    },
+    {
+      "name": "Geladeira Brastemp FF",
+      "price": "2870.00",
+      "id": 6
+    }
+  ]
+}
