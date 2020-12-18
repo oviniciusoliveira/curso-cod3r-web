@@ -12,8 +12,8 @@ export class ProductCreateComponent implements OnInit {
   atributoPersonalizado = "qualquer";
 
   product: Product = {
-    name: "Produto de Teste",
-    price: 125.98,
+    name: "",
+    price: 0,
   };
 
   /* Injeacao de Dependencia */

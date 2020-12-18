@@ -20,8 +20,12 @@ import { ForDirective } from "./directives/for.directive";
 import { ProductCreateComponent } from "./components/product/product-create/product-create.component";
 import { MatButtonModule } from "@angular/material/button";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
-
 import { HttpClientModule } from "@angular/common/http";
+
+import { FormsModule } from "@angular/forms";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { PinkDirective } from './directives/pink.directive';
 
 @NgModule({
   /* Componentes, Diretivas e Pipes */
@@ -32,6 +36,7 @@ import { HttpClientModule } from "@angular/common/http";
     NavComponent,
     HomeComponent,
     ProductCrudComponent,
+    PinkDirective,
     RedDirective,
     ForDirective,
     ProductCreateComponent,
@@ -48,6 +53,9 @@ import { HttpClientModule } from "@angular/common/http";
     MatButtonModule,
     MatSnackBarModule,
     HttpClientModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
