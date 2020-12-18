@@ -29,6 +29,11 @@
       "name": "Geladeira Brastemp FF",
       "price": "2870.00",
       "id": 6
+    },
+    {
+      "name": "Produto de Teste",
+      "price": 125.98,
+      "id": 7
     }
   ]
 }
