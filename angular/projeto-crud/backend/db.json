@@ -49,6 +49,11 @@
       "name": "Notebook",
       "price": "4212",
       "id": 10
+    },
+    {
+      "name": "Hotwells",
+      "price": "15",
+      "id": 11
     }
   ]
 }
