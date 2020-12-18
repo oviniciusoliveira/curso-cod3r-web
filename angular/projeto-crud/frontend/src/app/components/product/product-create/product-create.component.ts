@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductCreateComponent implements OnInit {
 
+  atributoPersonalizado = 'qualquer'
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+  fazerAcao(): void {
+    console.log('Fazendo a Ação!')
   }
 
 }
