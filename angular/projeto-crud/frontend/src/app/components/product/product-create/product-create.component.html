@@ -1,5 +1,12 @@
 <!-- Binding de Atributo -->
-<p [id]="atributoPersonalizado">product-create works!</p>
+<!-- <p [id]="atributoPersonalizado">product-create works!</p> -->
 
 <!-- Event Binding -->
-<button (click)="fazerAcao()">Fazendo Ação!</button>
+<!-- <button (click)="fazerAcao()">Fazendo Ação!</button> -->
+
+<button mat-raised-button (click)="createProduct()" color="primary">
+    Salvar
+</button>
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>
