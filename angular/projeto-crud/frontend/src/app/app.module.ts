@@ -27,6 +27,10 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { PinkDirective } from './directives/pink.directive';
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { ProductReadTempComponent } from './components/product/product-read-temp/product-read-temp.component';
 
 @NgModule({
   /* Componentes, Diretivas e Pipes */
@@ -42,6 +46,7 @@ import { ProductReadComponent } from './components/product/product-read/product-
     ForDirective,
     ProductCreateComponent,
     ProductReadComponent,
+    ProductReadTempComponent,
   ],
   /* Modulos */
   imports: [
@@ -58,6 +63,9 @@ import { ProductReadComponent } from './components/product/product-read/product-
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

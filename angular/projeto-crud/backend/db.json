@@ -54,6 +54,11 @@
       "name": "Hotwells",
       "price": "15",
       "id": 11
+    },
+    {
+      "name": "Headset Razer Kraken 2.0",
+      "price": "352",
+      "id": 12
     }
   ]
 }
