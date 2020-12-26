@@ -1,7 +1,7 @@
 SELECT * FROM estados WHERE id = 32
 
 INSERT INTO cidades (nome, area, estado_id)
-VALUES ('Campinas', 795, 25)
+VALUES ('Campinas', 795, 32)
 
 INSERT INTO cidades (nome, area, estado_id)
 VALUES ('Niterói', 133.9, 26)
