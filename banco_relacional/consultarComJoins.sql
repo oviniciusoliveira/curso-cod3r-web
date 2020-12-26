@@ -1,0 +1,1 @@
+SELECT * FROM cidades c INNER JOIN prefeitos p ON c.id = p.cidade_id;
