@@ -12,6 +12,3 @@ SELECT * FROM cidades c LEFT OUTER JOIN prefeitos p ON c.id = p.cidade_id
 -- UNION ALL
 UNION ALL
 SELECT * FROM cidades c RIGHT OUTER JOIN prefeitos p ON c.id = p.cidade_id;
-=======
-SELECT * FROM cidades c INNER JOIN prefeitos p ON c.id = p.cidade_id;
->>>>>>> cfac655b7316d7f682643d7cdca23e1bebb40eb8
