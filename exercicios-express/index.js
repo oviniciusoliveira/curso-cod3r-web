@@ -1,6 +1,11 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
 const saudacaoMiddleware = require("./saudacaoMiddleware");
+
+app.use(bodyParser.text());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(saudacaoMiddleware("Belchior"));
 
@@ -24,15 +29,21 @@ app.get("/clientes/relatorio", (req, res) => {
 // });
 
 // Método Manual (Sem BodyParser)
-app.post('/corpo', (req, res) => {
-    let corpo = ''
-    req.on('data', function(parte) {
-        corpo += parte
-    })
-    req.on('end', function() {
-        res.send(corpo)
-    })
-})
+app.post("/corpo", (req, res) => {
+  let corpo = "";
+  req.on("data", function (parte) {
+    corpo += parte;
+  });
+  req.on("end", function () {
+    res.send(corpo);
+  });
+});
+
+app.post("/corpobodyparser", (req, res) => {
+  // res.send(req.body)
+  // res.send(req.body.nome)
+  res.send(JSON.stringify(req.body));
+});
 
 app.get("/clientes/:id", (req, res) => {
   res.send(`Cliente ${req.params.id} selecionado!`);
