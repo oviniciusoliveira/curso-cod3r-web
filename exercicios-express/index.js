@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
-const saudacaoMiddleware = require('./saudacaoMiddleware')
+const saudacaoMiddleware = require("./saudacaoMiddleware");
 
-app.use(saudacaoMiddleware('Belchior'))
+app.use(saudacaoMiddleware("Belchior"));
 
 /* use; all */
 
@@ -11,7 +11,34 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/opa", (req, res, next) => {
+app.get("/clientes/relatorio", (req, res) => {
+  res.send(
+    `Método GET: Cliente relatório: completo = ${req.query.completo}; ano = ${req.query.ano}`
+  );
+});
+
+// app.post("/clientes/relatorio", (req, res) => {
+//   res.send(
+//     `Método POST: Cliente relatório: completo = ${req.query.completo}; ano = ${req.query.ano}`
+//   );
+// });
+
+// Método Manual (Sem BodyParser)
+app.post('/corpo', (req, res) => {
+    let corpo = ''
+    req.on('data', function(parte) {
+        corpo += parte
+    })
+    req.on('end', function() {
+        res.send(corpo)
+    })
+})
+
+app.get("/clientes/:id", (req, res) => {
+  res.send(`Cliente ${req.params.id} selecionado!`);
+});
+
+app.get("/urlteste", (req, res, next) => {
   console.log("Chamada do Middleware Durante");
   // res.send("<h1>Estou bem!</h1><br></br><h2>Tipo é HTML!</h2>")
 
@@ -33,10 +60,10 @@ app.get("/opa", (req, res, next) => {
     status: 200,
   });
 
-  next()
+  next();
 });
 
-app.use("/opa", (req, res) => {
+app.use("/urlteste", (req, res) => {
   console.log("Chamada do Middleware Depois");
 });
 
