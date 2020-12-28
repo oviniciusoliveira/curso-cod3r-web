@@ -1,5 +1,8 @@
 const express = require("express");
 const app = express();
+const saudacaoMiddleware = require('./saudacaoMiddleware')
+
+app.use(saudacaoMiddleware('Belchior'))
 
 /* use; all */
 
