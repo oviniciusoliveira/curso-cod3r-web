@@ -3,7 +3,13 @@ const app = express();
 
 /* use; all */
 
-app.get("/opa", (req, res) => {
+app.use((req, res, next) => {
+  console.log("Chamada do Middleware Antes");
+  next();
+});
+
+app.get("/opa", (req, res, next) => {
+  console.log("Chamada do Middleware Durante");
   // res.send("<h1>Estou bem!</h1><br></br><h2>Tipo é HTML!</h2>")
 
   // res.json({
@@ -21,10 +27,16 @@ app.get("/opa", (req, res) => {
     count: 3,
     skip: 0,
     limit: 3,
-    status: 200
+    status: 200,
   });
+
+  next()
 });
 
-app.listen(3000, () => {
+app.use("/opa", (req, res) => {
+  console.log("Chamada do Middleware Depois");
+});
+
+app.listen(3000, (req, res) => {
   console.log(`Listening Port: 3000`);
 });
