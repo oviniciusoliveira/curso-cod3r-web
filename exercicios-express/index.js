@@ -1,13 +1,27 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+
 const saudacaoMiddleware = require("./saudacaoMiddleware");
+
+const usuarioApi = require('./api/usuario')
+require('./api/produto')(app, 'com param!')
+
+// Alternativa a chamada acima: 
+// const produtoApi = require('./api/produto')
+// produtoApi(app, 'com param!')
+
 
 app.use(bodyParser.text());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(saudacaoMiddleware("Belchior"));
+
+
+
+app.post('/usuario', usuarioApi.salvar)
+app.get('/usuario', usuarioApi.obter)
 
 /* use; all */
 
