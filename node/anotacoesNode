@@ -1,0 +1,42 @@
+npm i lodash (instalar o lodash)
+npm i -g nodemon (instalar globalmente nodemon)
+
+npm init (inicializar npm package)
+npm init -y (yes para todas as opções)
+npm --save axios (criar dependencia axios)
+npm --save-dev axios (criar dependencia em modo de desenvolvimento
+    axios)
+
+
+    Dependencia JSON
+    // ^ permite atualização da versão minor
+    // ~ permite apenas versões com fix diferentes
+
+npm install --save-dev axios@0.17.1 -E
+(--save-dev : dependencia necessária somente em desenvolvimento)
+(axios : nome da dependencia [exemplo])
+(@ : versão)
+(-E : versão exata)
+
+package-lock.json garantia da versão exata que foi desenvolvida
+
+npm start
+npm test
+e outros
+são scripts padrões
+
+para scripts não padrões
+npm run dev
+npm run [scriptNaoPadrao]
+
+a variável __dirname está presente em todos os módulos do node
+e faz referência ao diretório absoluto atual
+
+Padrão arquitetural (Middleware ou Chain of Responsibility)
+
+express
+npm i --save express
+npm i --save bodyparser
+
+npm i node-schedule
+npm i node-schedule@1.3.0 -E

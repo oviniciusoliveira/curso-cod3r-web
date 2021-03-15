@@ -1,0 +1,61 @@
+.parallel() : executar as tarefas em paralelo
+.series() : executar as tarefas em série
+
+.src() : Creates a stream for reading Vinyl objects from the file system.
+(se houver mais de um arquivo específico, utilizar array)
+(ou utilizar **/*.ext para copiar todos)
+
+.pipe() : aplicar transformações nos arquivos src
+
+.dest(directory, [options]) : Creates a stream for writing Vinyl objects to the file system.
+directory (required) : The path of the output directory where files will be written.
+
+.on('string', function) : tratar um evento quando este acontecer
+    'error' : caso aconteça um erro
+    function : tratamento do evento
+
+==plugins==
+gulp-babel({}): transpiler
+    comments? : definir a existência de comentários no arquivo final
+    presets : definir a versão da linguagem a ser convertida
+        ["env"] : versão mais nova do javascript
+
+gulp-uglify() : minificar codigos javascript
+
+gulp-concat('arquivo') : concatenar os arquivos
+    arquivo : string define arquivo de output   
+
+gulp-typescript.createProject() :
+    especifica as configuracoes do projeto typescript quer será formatado
+    e o mesmo é utilizado como codigo fonte do projeto
+
+    exemplo código:
+    const ts = require('gulp-typescript')
+    const tsProject = ts.createProject('tsconfig.json')
+
+    function transformacaoTS (cb) {
+        return tsProject.src()
+            .pipe(tsProject())
+            .pipe(gulp.dest('build'))
+    }
+
+gulp-sass() - converter arquivos sass para css
+gulp-uglifycss({}) - minificar arquivos css
+    {uglyComments : (boolean) permitir comentarios css}
+    
+
+gulp-htmlmin({}) - minificar arquivos html
+    {
+        collapseWhitespace : (boolean) remover espaços e tabulações
+    }
+
+gulp-webserver({}) - run a local webserver with LiveReload
+    {
+        port: (number) >> port of the webserver
+        open: (boolean/string) >> open the localhost server in the browser.
+        livereload: (boolean/object) >> whether to use livereload
+    }
+
+gulp-watch() >> File watcher that uses super-fast chokidar and emits vinyl objects.
+    Bug? Necessário espeificar o caminho específico do arquivo a ser monitorado
+    

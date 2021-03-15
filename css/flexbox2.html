@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #02</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        .flex-container div {
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            display: flex;
+            height: 300px;
+            width: 800px;
+        }
+
+        .flex-container div:nth-child(3) {
+            background-color: indianred;
+            order: 1;
+            order: 0;
+            order: -1;
+            align-self: flex-start;
+            align-self: center;
+            align-self: flex-end;
+            align-self: stretch;
+        }
+
+        .flex-container div {
+            width: 200px;
+            flex-grow: 2;
+            flex-grow: 3;
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-grow: 3;
+        }
+
+        .flex-container {
+            width: 400px;
+            flex-shrink: 1;
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-shrink: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container tag noLabel">
+        <div class="tag noLabel">1</div>
+        <div class="tag noLabel">2</div>
+        <div class="tag noLabel">3</div>
+        <div class="tag noLabel">4</div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #03</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        .flex-container div {
+            box-sizing: border-box;
+        }   
+
+        .flex-container {
+            display: flex;
+            flex-direction: row; 
+        }
+
+        .flex-container div {
+            /* aplicado no main axis */
+            flex-basis: 100px; 
+            /* menor prioridade que o flex-basis */
+            width: 1000px;
+        }
+
+        .flex-container div:nth-child(4) {
+            /* grow shrink basis */
+            flex: 3 6 100px;
+        }
+
+        .flex-container {
+            width: 300px;
+            width: 1000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container tag noLabel">
+        <div class="tag noLabel">1</div>
+        <div class="tag noLabel">2</div>
+        <div class="tag noLabel">3</div>
+        <div class="tag noLabel">4</div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

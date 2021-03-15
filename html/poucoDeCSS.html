@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Um pouco de CSS</title>
+        <link rel="stylesheet" href="poucoDeCSS.css">
+        <style>
+            h1 {
+                font-size: 20px;
+            }
+
+            .fundoVermelho {
+                background-color:#C00;
+                /*  background-color: red;  */
+                /*  background-color: rgb(255, 0, 0);  */
+            }
+
+            .negrito {
+                font-weight: bold;
+            }
+
+
+
+            /* 
+            sem nada, para especificar tags
+            . para especificar classes
+            # para especificar ids
+             */
+        </style>
+    </head>
+    <body>
+        <h1>CSS</h1>
+        <span id="textoPrincipal" style="font-style: italic;">Texto 1</span><br><br><br>
+        <span class="fundoVermelho negrito">Texto 2</span><br><br>
+        <span class="fundoVermelho" wm-atrib>Texto 3</span>
+    </body>
+</html>
+
+<!--
+id é unico,
+classe pode ser reutilizada,
+    além de um elemento poder utilizar várias
+
+no browser:
+document.querySelector('')
+ou
+document.querySelectorAll('')
+retornar elementos com o atributo especificado
+utilizar . para procurar por classes
+ou # para ids
+[] para atributos personalizados
+-->
